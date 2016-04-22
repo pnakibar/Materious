@@ -1,6 +1,11 @@
 import React from 'react'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
+import {List, ListItem} from 'material-ui/List';
+import {pinkA200, transparent} from 'material-ui/styles/colors'
+import Avatar from 'material-ui/Avatar'
+import ActionGrade from 'material-ui/svg-icons/action/grade'
+
 
 export default class LeftNavSimpleExample extends React.Component {
 
@@ -9,10 +14,6 @@ export default class LeftNavSimpleExample extends React.Component {
   }
 
   render () {
-    const menuItemStyle = {
-      'background-image': 'url(http://i.imgur.com/FDQjXxf.jpg)',
-      'height': '200px'
-    }
 
     return (
       <div>
@@ -21,14 +22,31 @@ export default class LeftNavSimpleExample extends React.Component {
           docked={false}
           onRequestChange={() => this.props.closeLeftNav()}
         >
-        <MenuItem style={menuItemStyle}>
-          User
-        </MenuItem>
+
+        {this._menuItemUser()}
+        <List>
           {
             this.props.dashboards.map((e, index) => this._menuItem(e.name, index))
           }
+        </List>
         </Drawer>
       </div>
+    )
+  }
+
+  _menuItemUser () {
+    const menuItemStyle = {
+      'background-image': 'url(http://i.imgur.com/FDQjXxf.jpg)',
+      'height': '200px'
+    }
+    const avatar = 'http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/128/Avengers-Nick-Fury-icon.png'
+    return (
+      <MenuItem
+        style={menuItemStyle}
+        primaryText="Nick Fury"
+        leftIcon={<ActionGrade color={pinkA200} />}
+        rightAvatar={<Avatar src={avatar} />}
+      ></MenuItem>
     )
   }
 
@@ -38,12 +56,12 @@ export default class LeftNavSimpleExample extends React.Component {
       this.props.changeDashboard(index)
     }
     return (
-      <MenuItem
+      <ListItem
         key={index}
         onTouchTap={helper}
       >
         {name}
-      </MenuItem>
+      </ListItem>
     )
   }
 }
