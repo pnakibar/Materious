@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './admin/App.jsx'
 
+import './my-fonts.css'
+
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 

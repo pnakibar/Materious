@@ -6,11 +6,12 @@ import CardHeader from 'material-ui/lib/card/card-header'
 import CardMedia from 'material-ui/lib/card/card-media'
 import CardTitle from 'material-ui/lib/card/card-title'
 import CardText from 'material-ui/lib/card/card-text'
-import DashboardCard from './DashboardCard'
+import DashboardCard from './components/DashboardCard'
 
 export default class Dashboards extends React.Component {
   render () {
     const dashBoardName = this.props.dashBoardName? this.props.dashBoardName : 'Dashboard'
+    const dashBoardSubtitle = this.props.dashBoardSubtitle? this.props.dashBoardSubtitle : 'The sample dashboard'
     const tilesData1 = [
       {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-361390.jpg',
@@ -53,12 +54,18 @@ export default class Dashboards extends React.Component {
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
     return (
       <div style={{ margin: '20px' }}>
-      <p>{dashBoardName}</p>
+      <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
       <Row>
-        {tilesData1.map((e) => <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />)}
+        {tilesData1.map((e) =>
+          <Col lg={4}>
+            <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
+          </Col>)}
       </Row>
       <Row>
-        {tilesData2.map((e) => <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />)}
+        {tilesData2.map((e) =>
+          <Col lg={4}>
+            <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
+          </Col>)}
       </Row>
       </div>
     )
