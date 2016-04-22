@@ -8,42 +8,25 @@ import CardTitle from 'material-ui/lib/card/card-title'
 import CardText from 'material-ui/lib/card/card-text'
 import DashboardCard from './components/DashboardCard'
 
-export default class Dashboards extends React.Component {
+export default class Dashboard2 extends React.Component {
   render () {
     const dashBoardName = this.props.dashBoardName? this.props.dashBoardName : 'Dashboard'
     const dashBoardSubtitle = this.props.dashBoardSubtitle? this.props.dashBoardSubtitle : 'The sample dashboard'
     const tilesData1 = [
       {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-361390.jpg',
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-8002.jpg',
         title: 'Image 1',
         author: 'Author 1'
       },
       {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-46230.jpg',
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-252916.jpg',
         title: 'Image 2',
         author: 'Author 2'
       },
       {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-350916.jpg',
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-44322.jpg',
         title: 'Image 3',
         author: 'Author 3'
-      }
-    ]
-    const tilesData2 = [
-      {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-75602.jpg',
-        title: 'Image 4',
-        author: 'Author 4'
-      },
-      {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70126.jpg',
-        title: 'Image 5',
-        author: 'Author 5'
-      },
-      {
-        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21732.jpg',
-        title: 'Image 6',
-        author: 'Author 7'
       }
     ]
 
@@ -57,12 +40,6 @@ export default class Dashboards extends React.Component {
       <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
       <Row>
         {tilesData1.map((e) =>
-          <Col lg={4}>
-            <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
-          </Col>)}
-      </Row>
-      <Row>
-        {tilesData2.map((e) =>
           <Col lg={4}>
             <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
           </Col>)}

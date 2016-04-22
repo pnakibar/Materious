@@ -1,0 +1,17 @@
+h1 {
+    font-family: 'Roboto', Arial, serif;
+    font-weight: 400;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1.dashboard-title {
+  font-size: 26px;
+}
+
+h1.dashboard-title small{
+  font-size: 16px;
+  color: #888888;
+}
