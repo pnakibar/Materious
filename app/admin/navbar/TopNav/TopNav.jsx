@@ -1,10 +1,10 @@
 import React from 'react'
-import AppBar from 'material-ui/lib/app-bar'
-import IconButton from 'material-ui/lib/icon-button'
-import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu'
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert'
-import IconMenu from 'material-ui/lib/menus/icon-menu'
-import MenuItem from 'material-ui/lib/menus/menu-item'
+import MenuIcon from 'material-ui/svg-icons/navigation/menu'
+import AppBar from 'material-ui/AppBar'
+import IconButton from 'material-ui/IconButton'
+import IconMenu from 'material-ui/IconMenu'
+import MenuItem from 'material-ui/MenuItem'
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
 
 export default class TopNav extends React.Component {
   constructor (props) {
@@ -31,7 +31,4 @@ export default class TopNav extends React.Component {
         }
       />
   ) }
-}
-TopNav.propTypes = {
-  toggleLeftNav: React.PropTypes.func.required
 }

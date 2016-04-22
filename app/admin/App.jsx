@@ -18,9 +18,9 @@ export default class App extends React.Component {
           name: 'Epicness Dashboard',
           dashboard: () => <Dashboard2 dashBoardName={'Epicness'} dashBoardSubtitle={''}/>
         }
-      ]
+      ],
+      currentDashboard: 0
     }
-    this.changeDashboard(0)
   }
 
   render () {
