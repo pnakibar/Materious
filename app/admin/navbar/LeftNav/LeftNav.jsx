@@ -16,10 +16,25 @@ export default class LeftNavSimpleExample extends React.Component {
     return (
       <div>
         <LeftNav style={navStyle} open={this.props.isOpen}>
-          <MenuItem onTouchTap={this.props.closeLeftNav}>Menu Item</MenuItem>
-          <MenuItem onTouchTap={this.props.closeLeftNav}>Menu Item 2</MenuItem>
+          {
+            this.props.dashboards.map((e, index) => this._menuItem(e.name, index))
+          }
         </LeftNav>
       </div>
+    )
+  }
+
+  _menuItem (name, index) {
+    const helper = () => {
+      this.props.closeLeftNav()
+      this.props.changeDashboard(index)
+    }
+    return (
+      <MenuItem
+        onTouchTap={helper}
+      >
+        {name}
+      </MenuItem>
     )
   }
 }

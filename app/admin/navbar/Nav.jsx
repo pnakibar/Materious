@@ -24,7 +24,11 @@ export default class Nav extends React.Component {
     return (
       <div>
         <TopNav toggleLeftNav={this.toggleLeftNav} />
-        <LeftNav isOpen={this.state.leftNavOpen} closeLeftNav={this.closeLeftNav} />
+        <LeftNav dashboards={this.props.dashboards}
+          isOpen={this.state.leftNavOpen}
+          closeLeftNav={this.closeLeftNav}
+          changeDashboard={this.props.changeDashboard}
+        />
       </div>
     )
   }
