@@ -1,12 +1,6 @@
 import React from 'react'
-import {Grid, Row, Col} from 'react-flexbox-grid/lib/index'
-import Card from 'material-ui/lib/card/card'
-import CardActions from 'material-ui/lib/card/card-actions'
-import CardHeader from 'material-ui/lib/card/card-header'
-import CardMedia from 'material-ui/lib/card/card-media'
-import CardTitle from 'material-ui/lib/card/card-title'
-import CardText from 'material-ui/lib/card/card-text'
 import DashboardCard from './components/DashboardCard'
+import {Row, Col} from 'react-flexbox-grid/lib/index'
 
 export default class Dashboard2 extends React.Component {
   render () {
@@ -30,7 +24,6 @@ export default class Dashboard2 extends React.Component {
       }
     ]
 
-
     const text = `                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
@@ -46,19 +39,5 @@ export default class Dashboard2 extends React.Component {
       </Row>
       </div>
     )
-  }
-
-  _generateCard (title, text, img) {
-    return (
-      <Col x2={6} sm={6} md={6} lg={4}>
-      <Card>
-         <CardHeader title={title} />
-         <CardMedia>
-            <img src={img} />
-         </CardMedia>
-         <CardText>{text}</CardText>
-      </Card>
-      </Col>
-     )
   }
 }

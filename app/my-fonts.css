@@ -15,3 +15,15 @@ h1.dashboard-title small{
   font-size: 16px;
   color: #888888;
 }
+
+div {
+    display: block;
+}
+
+body {
+  display: block;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+  resize: none;
+}

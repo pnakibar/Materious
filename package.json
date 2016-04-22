@@ -9,7 +9,6 @@
     "start": "webpack-dev-server",
     "devtool": "source-map",
     "publish": "npm run build && node publish_to_ghpages.js"
-
   },
   "keywords": [],
   "author": "",
@@ -31,7 +30,7 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "flexboxgrid": "^6.3.0",
-    "material-ui": "^0.14.4",
+    "material-ui": "^0.15.0-beta.2",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-flexbox-grid": "^0.9.6",

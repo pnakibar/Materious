@@ -20,10 +20,14 @@ export default class Nav extends React.Component {
   }
 
   render () {
-    console.log(TopNav.height)
+    const topNavStyle = {
+      position: 'fixed',
+      top:0,
+      zDepth:0
+    }
     return (
       <div>
-        <TopNav toggleLeftNav={this.toggleLeftNav} />
+        <TopNav style={topNavStyle} toggleLeftNav={this.toggleLeftNav} />
         <LeftNav dashboards={this.props.dashboards}
           isOpen={this.state.leftNavOpen}
           closeLeftNav={this.closeLeftNav}

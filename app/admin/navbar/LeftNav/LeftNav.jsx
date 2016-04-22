@@ -1,6 +1,7 @@
 import React from 'react'
-import LeftNav from 'material-ui/lib/left-nav'
-import MenuItem from 'material-ui/lib/menus/menu-item'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
+
 
 export default class LeftNavSimpleExample extends React.Component {
 
@@ -9,17 +10,13 @@ export default class LeftNavSimpleExample extends React.Component {
   }
 
   render () {
-    const navStyle = {
-      marginTop: 64,
-      height: (window.innerHeight - 64)
-    }
     return (
       <div>
-        <LeftNav style={navStyle} open={this.props.isOpen}>
+        <Drawer open={this.props.isOpen}>
           {
             this.props.dashboards.map((e, index) => this._menuItem(e.name, index))
           }
-        </LeftNav>
+        </Drawer>
       </div>
     )
   }
@@ -31,6 +28,7 @@ export default class LeftNavSimpleExample extends React.Component {
     }
     return (
       <MenuItem
+        key={index}
         onTouchTap={helper}
       >
         {name}
