@@ -12,11 +12,11 @@ export default class App extends React.Component {
       dashboards: [
         {
           name: 'Sample Dashboard',
-          dashboard: () => <Dashboards />
+          dashboard: () => <Dashboards dashBoardName={'Sample Dashboard'}/>
         },
         {
           name: 'Epicness Dashboard',
-          dashboard: () => <Dashboard2 dashBoardName={'Epicness'} dashBoardSubtitle={''}/>
+          dashboard: () => <Dashboard2 dashBoardName={'Epicness'} dashBoardSubtitle={'Simply epic'}/>
         }
       ],
       currentDashboard: 0
