@@ -7,7 +7,7 @@ export default class DashboardCard extends React.Component {
   }
   render () {
     const style = {
-      'margin-bottom': '20px'
+      'marginBottom': '20px'
     }
     return (
       <Card initiallyExpanded={true} style={style}>

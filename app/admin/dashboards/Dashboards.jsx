@@ -50,15 +50,15 @@ export default class Dashboards extends React.Component {
       <div style={{ margin: '20px' }}>
       <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
       <Row>
-        {tilesData1.map((e) =>
+        {tilesData1.map((e, index) =>
           <Col lg={4}>
-            <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
+            <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
           </Col>)}
       </Row>
       <Row>
-        {tilesData2.map((e) =>
+        {tilesData2.map((e, index) =>
           <Col lg={4}>
-            <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />
+            <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
           </Col>)}
       </Row>
       </div>
