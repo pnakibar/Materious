@@ -12,7 +12,11 @@ export default class LeftNavSimpleExample extends React.Component {
   render () {
     return (
       <div>
-        <Drawer open={this.props.isOpen}>
+        <Drawer
+          open={this.props.isOpen}
+          docked={false}
+          onRequestChange={() => this.props.closeLeftNav()}
+        >
           {
             this.props.dashboards.map((e, index) => this._menuItem(e.name, index))
           }
