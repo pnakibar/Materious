@@ -2,7 +2,6 @@ import React from 'react'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 
-
 export default class LeftNavSimpleExample extends React.Component {
 
   constructor (props) {
@@ -10,6 +9,11 @@ export default class LeftNavSimpleExample extends React.Component {
   }
 
   render () {
+    const menuItemStyle = {
+      'background-image': 'url(http://i.imgur.com/FDQjXxf.jpg)',
+      'height': '200px'
+    }
+
     return (
       <div>
         <Drawer
@@ -17,6 +21,9 @@ export default class LeftNavSimpleExample extends React.Component {
           docked={false}
           onRequestChange={() => this.props.closeLeftNav()}
         >
+        <MenuItem style={menuItemStyle}>
+          User
+        </MenuItem>
           {
             this.props.dashboards.map((e, index) => this._menuItem(e.name, index))
           }
