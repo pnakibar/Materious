@@ -10,7 +10,8 @@ import DashboardCard from './DashboardCard'
 
 export default class Dashboards extends React.Component {
   render () {
-    let tilesData = [
+    const dashBoardName = this.props.dashBoardName? this.props.dashBoardName : 'Dashboard'
+    const tilesData1 = [
       {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-361390.jpg',
         title: 'Image 1',
@@ -27,14 +28,37 @@ export default class Dashboards extends React.Component {
         author: 'Author 3'
       }
     ]
+    const tilesData2 = [
+      {
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-75602.jpg',
+        title: 'Image 4',
+        author: 'Author 4'
+      },
+      {
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70126.jpg',
+        title: 'Image 5',
+        author: 'Author 5'
+      },
+      {
+        img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21732.jpg',
+        title: 'Image 6',
+        author: 'Author 7'
+      }
+    ]
+
+
     const text = `                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
     return (
-      <div style={{margin: '20px'}}>
+      <div style={{ margin: '20px' }}>
+      <p>{dashBoardName}</p>
       <Row>
-        {tilesData.map((e) => <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />)}
+        {tilesData1.map((e) => <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />)}
+      </Row>
+      <Row>
+        {tilesData2.map((e) => <DashboardCard title={e.title} media={<img src={e.img}/>} text={text} />)}
       </Row>
       </div>
     )
@@ -42,7 +66,7 @@ export default class Dashboards extends React.Component {
 
   _generateCard (title, text, img) {
     return (
-      <Col lg={4}>
+      <Col x2={6} sm={6} md={6} lg={4}>
       <Card>
          <CardHeader title={title} />
          <CardMedia>

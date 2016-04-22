@@ -12,18 +12,21 @@ export default class DashboardCard extends React.Component {
     super(props)
   }
   render () {
+    const style = {
+      'margin-bottom': '20px'
+    }
     return (
       <Col lg={4}>
-      <Card>
+      <Card initiallyExpanded={true} style={style}>
          <CardTitle
           title={this.props.title}
-          initiallyExpanded={true}
+          actAsExpander={true}
           showExpandableButton={true}
          />
-         <CardMedia >
+         <CardMedia expandable={true}>
             {this.props.media}
          </CardMedia>
-         <CardText>{this.props.text}</CardText>
+         <CardText expandable={true}>{this.props.text}</CardText>
       </Card>
       </Col>
      )
