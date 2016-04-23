@@ -1,11 +1,9 @@
 import React from 'react'
-import DashboardCard from './components/DashboardCard'
 import {Row, Col} from 'react-flexbox-grid/lib/index'
+import {Dashboard, DashboardCard} from './components/Dashboard'
 
-export default class Dashboards extends React.Component {
+export default class Dashboard1 extends React.Component {
   render () {
-    const dashBoardName = this.props.dashBoardName? this.props.dashBoardName : 'Dashboard'
-    const dashBoardSubtitle = this.props.dashBoardSubtitle? this.props.dashBoardSubtitle : 'The sample dashboard'
     const tilesData1 = [
       {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-361390.jpg',
@@ -41,27 +39,36 @@ export default class Dashboards extends React.Component {
       }
     ]
 
-
-    const text = `                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
+
     return (
-      <div style={{ margin: '20px' }} className='dashboard'>
-      <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
-      <Row>
-        {tilesData1.map((e, index) =>
-          <Col lg={4}>
-            <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
-          </Col>)}
-      </Row>
-      <Row>
-        {tilesData2.map((e, index) =>
-          <Col lg={4}>
-            <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
-          </Col>)}
-      </Row>
-      </div>
+      <Dashboard title={this.props.title} subtitle={this.props.subtitle}>
+        <div className='1'>
+          <Row>
+            {tilesData1.map((e, index) =>
+              <Col lg={4}>
+                <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
+              </Col>)}
+          </Row>
+          <Row>
+            {tilesData2.map((e, index) =>
+              <Col lg={4}>
+                <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
+              </Col>)}
+          </Row>
+        </div>
+      </Dashboard>
     )
   }
 }
+
+/*
+Dashboard1.propTypes = {
+  title: React.PropTypes.string,
+  subtitle: React.PropTypes.string
+}
+
+*/

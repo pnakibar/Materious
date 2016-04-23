@@ -36,10 +36,10 @@ export default class LeftNavSimpleExample extends React.Component {
 
   _menuItemUser () {
     const avatarStyle = {
-      'padding-left': '5x'
+      paddingLeft: '5x'
     }
     const userItemStyle = {
-      'background-image': 'url(http://i.imgur.com/FDQjXxf.jpg)',
+      backgroundImage: 'url(http://i.imgur.com/FDQjXxf.jpg)',
       padding: '10px',
       height: '44px'
     }
@@ -47,6 +47,7 @@ export default class LeftNavSimpleExample extends React.Component {
     const avatar = 'http://x.annihil.us/u/prod/marvel/i/mg/6/30/55957023b1edb/landscape_xlarge.jpg'
     return (
       <div
+        className='user-box'
         style={userItemStyle}
       >
         <Row>

@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardCard from './components/DashboardCard'
+import {Dashboard, DashboardCard} from './components/Dashboard'
 import {Row, Col} from 'react-flexbox-grid/lib/index'
 
 export default class Dashboard2 extends React.Component {
@@ -29,15 +29,22 @@ export default class Dashboard2 extends React.Component {
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
     return (
-      <div style={{ margin: '20px' }} className='dashboard'>
-      <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
-      <Row>
-        {tilesData1.map((e, index) =>
-          <Col lg={4}>
-            <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
-          </Col>)}
-      </Row>
-      </div>
+      <Dashboard>
+        <div className='2'>
+          <Row>
+            {tilesData1.map((e, index) =>
+              <Col lg={4}>
+                <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
+              </Col>)
+            }
+          </Row>
+        </div>
+      </Dashboard>
     )
   }
+}
+
+Dashboard2.propTypes = {
+  title: React.PropTypes.string,
+  subtitle: React.PropTypes.string
 }
