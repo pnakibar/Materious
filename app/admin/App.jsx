@@ -1,7 +1,10 @@
 import React from 'react'
 import Nav from './navbar/Nav.jsx'
-import Dashboards from './dashboards/Dashboards'
+import Dashboard1 from './dashboards/Dashboard1'
 import Dashboard2 from './dashboards/Dashboard2'
+import MenuItem from 'material-ui/MenuItem'
+import {Row, Col} from 'react-flexbox-grid/lib/index'
+import Avatar from 'material-ui/Avatar'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -12,22 +15,24 @@ export default class App extends React.Component {
       dashboards: [
         {
           name: 'Sample Dashboard',
-          dashboard: () => <Dashboards dashBoardName={'Sample Dashboard'}/>
+          dashboard: () => <Dashboard1 title={'Sample Dashboard'} subtitle='The Sample'/>
         },
         {
           name: 'Epicness Dashboard',
-          dashboard: () => <Dashboard2 dashBoardName={'Epicness'} dashBoardSubtitle={'Simply epic'}/>
+          dashboard: () => <Dashboard2 title={'Epicness'} subtitle={'Simply epic'}/>
         }
       ],
       currentDashboard: 0
     }
   }
 
+          //
+
   render () {
     return (
       <div>
-        <Nav dashboards={this.state.dashboards} changeDashboard={this.changeDashboard}/>
-        {this._renderCurrentDashboard()}
+          <Nav dashboards={this.state.dashboards} changeDashboard={this.changeDashboard}/>
+          {this._renderCurrentDashboard()}
       </div>
     )
   }
@@ -40,5 +45,4 @@ export default class App extends React.Component {
   _renderCurrentDashboard () {
     return this.state.dashboards[this.state.currentDashboard].dashboard()
   }
-
 }

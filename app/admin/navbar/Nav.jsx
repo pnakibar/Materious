@@ -6,6 +6,7 @@ export default class Nav extends React.Component {
   constructor (props) {
     super(props)
     this.toggleLeftNav = this.toggleLeftNav.bind(this)
+    this.setLeftNavState = this.setLeftNavState.bind(this)
     this.closeLeftNav = this.closeLeftNav.bind(this)
     this.state = {
       leftNavOpen: false
@@ -17,6 +18,9 @@ export default class Nav extends React.Component {
   }
   closeLeftNav () {
     this.setState({leftNavOpen: false})
+  }
+  setLeftNavState (s) {
+    this.setState({leftNavOpen: s})
   }
 
   render () {
