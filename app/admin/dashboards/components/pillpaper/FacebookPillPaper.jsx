@@ -42,7 +42,7 @@ export default class FacebookPillPaper extends React.Component {
     }
 
     return {
-      icon: (<FontIcon className='material-icons' style={iconStyle} >thumb_up</FontIcon>),
+      icon: (<FontIcon className='fa fa-thumbs-o-up' style={iconStyle} />),
       likes: (<span style={fontStyle}>{this.props.likes}</span>)
     }
 }

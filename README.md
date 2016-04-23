@@ -7,6 +7,8 @@
 * [Flexbox](http://flexboxgrid.com/)
 * [react-flexbox-grid](http://roylee0704.github.io/react-flexbox-grid/)
 * [Babel](https://babeljs.io/)
+* [Material Icons](https://design.google.com/icons/) (general)
+* [Fonts Awesome](http://fortawesome.github.io/Font-Awesome/) (only some services)
 
 ### How to use this
 The components are in the _./app_ directory.
