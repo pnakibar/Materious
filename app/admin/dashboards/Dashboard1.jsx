@@ -5,6 +5,7 @@ import FontIcon from 'material-ui/FontIcon'
 
 import Paper from 'material-ui/Paper'
 import {indigo500, indigo900} from 'material-ui/styles/colors'
+import PillPaper from './PillPaper'
 
 export default class Dashboard1 extends React.Component {
   constructor (props) {
@@ -16,7 +17,7 @@ export default class Dashboard1 extends React.Component {
       likesCountString: this._numberToFormattedString(likesCount),
     }
   }
-  
+
   _numberToFormattedString (number) {
     if (number < 1000)
       return number
@@ -25,37 +26,21 @@ export default class Dashboard1 extends React.Component {
     }
   }
 
+        // {this._likeIcon()}
   render () {
+    const likeIcon = this._generateLikeProperties()
+    console.log(likeIcon)
     return (
       <Dashboard title={this.props.title}>
-        {this._likeIcon()}
+        <PillPaper
+          colorLeft={indigo500}
+          colorRight={indigo900}
+          contentLeft={likeIcon.icon}
+          contentRight={likeIcon.likes}/>
       </Dashboard>
     )
   }
-  _likeIcon () {
-    console.log(indigo500)
-    const divStyle = {
-      display: 'inline-block'
-    }
-
-    const style1 = {
-      backgroundColor: indigo500,
-      height: '120px',
-      width: '120px',
-      margin: -1,
-      display: 'inline-block',
-      textAlign: 'center',
-      lineHeight: '120px'
-    }
-    const style2 = {
-      backgroundColor: indigo900,
-      height: '120px',
-      width: '120px',
-      margin: -1,
-      display: 'inline-block',
-      textAlign: 'center',
-      lineHeight: '120px'
-    }
+  _generateLikeProperties () {
     const fontStyle = {
       color: '#FFFFFF',
       display: 'inline-block',
@@ -71,15 +56,9 @@ export default class Dashboard1 extends React.Component {
         lineHeight: 'normal'
     }
 
-    return (
-      <Row>
-        <Paper rounded={false} style={style1} zDepth={1}>
-          <FontIcon className="material-icons" style={iconStyle}>thumb_up</FontIcon>
-        </Paper>
-        <Paper rounded={false} style={style2} zDepth={1} >
-          <span style={fontStyle}>{this.state.likesCountString}</span>
-        </Paper>
-      </Row>
-    )
+    return {
+      icon: (<FontIcon className='material-icons' style={iconStyle} >thumb_up</FontIcon>),
+      likes: (<span style={fontStyle}>{99}</span>)
+    }
   }
 }
