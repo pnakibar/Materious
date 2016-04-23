@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './navbar/Nav.jsx'
 import Dashboard1 from './dashboards/Dashboard1'
 import Dashboard2 from './dashboards/Dashboard2'
+import Dashboard3 from './dashboards/Dashboard3'
 import MenuItem from 'material-ui/MenuItem'
 import {Row, Col} from 'react-flexbox-grid/lib/index'
 import Avatar from 'material-ui/Avatar'
@@ -14,8 +15,12 @@ export default class App extends React.Component {
     this.state = {
       dashboards: [
         {
+          name: 'New Components',
+          dashboard: () => <Dashboard1 title={'New Components'} subtitle='The Sample'/>
+        },
+        {
           name: 'Sample Dashboard',
-          dashboard: () => <Dashboard1 title={'Sample Dashboard'} subtitle='The Sample'/>
+          dashboard: () => <Dashboard3 title={'Sample Dashboard'} subtitle='The Sample'/>
         },
         {
           name: 'Epicness Dashboard',
