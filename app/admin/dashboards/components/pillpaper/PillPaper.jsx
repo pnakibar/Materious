@@ -3,24 +3,6 @@ import {Row} from 'react-flexbox-grid/lib/index'
 import Paper from 'material-ui/Paper'
 
 export default class PillPaper extends React.Component {
-  constructor (props) {
-    super(props)
-    const numberCount = 99
-
-    this.state = {
-      numberCount: numberCount,
-      likesCountString: this._numberToFormattedString(numberCount)
-    }
-  }
-
-  _numberToFormattedString (number) {
-    if (number < 1000) {
-      return number
-    } else {
-      return this._numberToFormattedString(Math.floor(number / 1000)) + 'k'
-    }
-  }
-
   render () {
     const styleLeft = {
       backgroundColor: this.props.colorLeft,
