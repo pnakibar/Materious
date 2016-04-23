@@ -4,8 +4,6 @@ import {Row, Col} from 'react-flexbox-grid/lib/index'
 
 export default class Dashboard2 extends React.Component {
   render () {
-    const dashBoardName = this.props.dashBoardName? this.props.dashBoardName : 'Dashboard'
-    const dashBoardSubtitle = this.props.dashBoardSubtitle? this.props.dashBoardSubtitle : 'The sample dashboard'
     const tilesData1 = [
       {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-8002.jpg',
@@ -29,7 +27,7 @@ export default class Dashboard2 extends React.Component {
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
     return (
-      <Dashboard>
+      <Dashboard title={this.props.title}>
         <div className='2'>
           <Row>
             {tilesData1.map((e, index) =>

@@ -19,9 +19,7 @@ export default class Dashboard1 extends React.Component {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-350916.jpg',
         title: 'Image 3',
         author: 'Author 3'
-      }
-    ]
-    const tilesData2 = [
+      },
       {
         img: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-75602.jpg',
         title: 'Image 4',
@@ -43,32 +41,37 @@ export default class Dashboard1 extends React.Component {
      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
-
+    const rowStyle = {
+      '-webkit-justify-content': 'space-between',
+      'justify-content': 'space-between'
+    }
     return (
-      <Dashboard title={this.props.title} subtitle={this.props.subtitle}>
+      <Dashboard title={this.props.title}>
         <div className='1'>
-          <Row>
-            {tilesData1.map((e, index) =>
-              <Col lg={4}>
-                <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
-              </Col>)}
-          </Row>
-          <Row>
-            {tilesData2.map((e, index) =>
-              <Col lg={4}>
-                <DashboardCard key={index} title={e.title} media={<img src={e.img}/>} text={text} />
-              </Col>)}
+          <Row style={rowStyle}>
+            {tilesData1.map((e, i) =>
+              <Col xs={6} sm={3} md={2}>
+                <div key={i}>
+                  <DashboardCard title={e.title} media={<img src={e.img}/>} text={text}/>
+                </div>
+              </Col>
+            )}
+            {tilesData1.map((e, i) =>
+              <Col xs={6} sm={3} md={2}>
+                <div key={i}>
+                  <DashboardCard title={e.title} media={<img src={e.img}/>} text={text}/>
+                </div>
+              </Col>
+            )}
           </Row>
         </div>
       </Dashboard>
     )
   }
 }
-
 /*
 Dashboard1.propTypes = {
   title: React.PropTypes.string,
   subtitle: React.PropTypes.string
 }
-
 */

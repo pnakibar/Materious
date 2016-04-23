@@ -26,6 +26,8 @@ export default class App extends React.Component {
     }
   }
 
+          //
+
   render () {
     return (
       <div>
@@ -41,6 +43,6 @@ export default class App extends React.Component {
     this.setState(newState)
   }
   _renderCurrentDashboard () {
-    // return this.state.dashboards[this.state.currentDashboard].dashboard()
+    return this.state.dashboards[this.state.currentDashboard].dashboard()
   }
 }
