@@ -47,7 +47,7 @@ export default class Dashboards extends React.Component {
      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.`
     return (
-      <div style={{ margin: '20px' }}>
+      <div style={{ margin: '20px' }} className='dashboard'>
       <h1 className='dashboard-title'>{dashBoardName} <small>{dashBoardSubtitle}</small></h1>
       <Row>
         {tilesData1.map((e, index) =>

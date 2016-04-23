@@ -2,6 +2,9 @@ import React from 'react'
 import Nav from './navbar/Nav.jsx'
 import Dashboards from './dashboards/Dashboards'
 import Dashboard2 from './dashboards/Dashboard2'
+import MenuItem from 'material-ui/MenuItem'
+import {Row, Col} from 'react-flexbox-grid/lib/index'
+import Avatar from 'material-ui/Avatar'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -26,8 +29,8 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-        <Nav dashboards={this.state.dashboards} changeDashboard={this.changeDashboard}/>
-        {this._renderCurrentDashboard()}
+          <Nav dashboards={this.state.dashboards} changeDashboard={this.changeDashboard}/>
+          {this._renderCurrentDashboard()}
       </div>
     )
   }
@@ -40,5 +43,4 @@ export default class App extends React.Component {
   _renderCurrentDashboard () {
     return this.state.dashboards[this.state.currentDashboard].dashboard()
   }
-
 }
