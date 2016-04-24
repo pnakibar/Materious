@@ -13,10 +13,36 @@ export default class Dashboard1 extends React.Component {
   }
 
   render () {
+    const style = {
+      height: '100px',
+      width: '100px',
+      margin: '20px',
+      textAlign: 'center',
+      display: 'inline-block',
+    };
+
+    const redStyle = {
+      height: '100px',
+      width: '100px',
+      margin: '20px',
+      textAlign: 'center',
+      display: 'inline-block',
+      backgroundColor: 'red'
+    };
+
+    const redBox = {
+      width: '100px',
+      height: '100px',
+      backgroundColor: 'red'
+    }
+
     return (
       <Dashboard title={this.props.title}>
         <FacebookPillPaper
           likes={10}/>
+        <Paper style={style} zDepth={5} rounded={false}>
+          <div style={redBox} />
+        </Paper>
       </Dashboard>
     )
   }
