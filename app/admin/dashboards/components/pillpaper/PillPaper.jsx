@@ -7,14 +7,14 @@ export default class PillPaper extends React.Component {
 
     const paperStyle = {
       height: '120px',
-      width: '320px'
+      width: '310px'
     }
 
     const styleLeft = this._applyCentralized(
       this.props.centralizeLeft || false,
       {
         backgroundColor: this.props.colorLeft,
-        height: '120px',
+        height: paperStyle.height,
         width: '120px',
         display: 'block',
         float: 'left'
@@ -24,16 +24,16 @@ export default class PillPaper extends React.Component {
       this.props.centralizeRight || false,
       {
         backgroundColor: this.props.colorRight,
-        height: '120px',
-        width: '200px',
+        height: paperStyle.height,
+        width: parseInt(paperStyle.width) - 120 + 'px',
         display: 'block',
         float: 'right'
       }
     )
 
     return (
-      <div className='paper-pill'>
-        <Paper rounded={false} style={paperStyle} zDepth={1}>
+      <div className='paper-pill' style={{display:'block', position:'relative', display: 'flex'}}>
+        <Paper rounded={false} style={paperStyle} zDepth={3}>
           <div style={styleLeft}>{this.props.contentLeft}</div>
           <div style={styleRight}>{this.props.contentRight}</div>
         </Paper>

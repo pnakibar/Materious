@@ -17,16 +17,23 @@ export default class Dashboard1 extends React.Component {
 
   render () {
     const style = {
-      margin: '10px'
+      paddingLeft: '20px',
+      paddingRight: '20px'
+    }
+    const elementStyle = {
+      marginTop: '10px',
+      marginBottom: '10px'
     }
     return (
       <Dashboard title={this.props.title}>
-        <Row>
-          <Col style={style}><FacebookPillPaper likes={1000} /></Col>
-          <Col style={style}><GooglePlusPillPaper likes={99999} /></Col>
-          <Col style={style}><LinkedinPillPaper likes={1200000} /></Col>
-          <Col style={style}><UsersPillPaper likes={100000} /></Col>
-        </Row>
+        <div className='dashboard-content' style={style}>
+          <Row around='xs'>
+            <Col xs style={elementStyle} ><FacebookPillPaper likes={1000} /></Col>
+            <Col xs style={elementStyle} ><GooglePlusPillPaper likes={99999} /></Col>
+            <Col xs style={elementStyle} ><LinkedinPillPaper likes={1200000} /></Col>
+            <Col xs style={elementStyle} ><UsersPillPaper likes={100000} /></Col>
+          </Row>
+        </div>
       </Dashboard>
     )
   }
