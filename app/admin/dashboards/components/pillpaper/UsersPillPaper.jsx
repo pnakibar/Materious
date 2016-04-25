@@ -1,6 +1,6 @@
 import React from 'react'
 import PillPaper from './PillPaper'
-import {blue500, blue700} from 'material-ui/styles/colors'
+import {green500, green700} from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon'
 
 export default class UsersPillPaper extends React.Component {
@@ -9,10 +9,12 @@ export default class UsersPillPaper extends React.Component {
     return (
       <div className='pillpaper-users'>
         <PillPaper
-          colorLeft={blue500}
-          colorRight={blue700}
+          colorLeft={green500}
+          colorRight={green700}
           contentLeft={likeIcon.icon}
-          contentRight={likeIcon.likes}/>
+          contentRight={likeIcon.likes}
+          centralizeLeft={true}
+        />
       </div>
     )
 
@@ -25,13 +27,13 @@ export default class UsersPillPaper extends React.Component {
       return this._numberToFormattedString(Math.floor(number / 1000)) + 'k'
     }
   }
+
   _generateLikeProperties () {
-    const fontStyle = {
+    const textBox = {
       color: '#FFFFFF',
-      display: 'inline-block',
       verticalAlign: 'middle',
       lineHeight: 'normal',
-      fontSize: '70px'
+      padding: '10px'
     }
     const iconStyle = {
         color: '#FFFFFF',
@@ -42,8 +44,13 @@ export default class UsersPillPaper extends React.Component {
     }
 
     return {
-      icon: (<FontIcon className='fa fa-linkedin-square' style={iconStyle} />),
-      likes: (<span style={fontStyle}>{this.props.likes}</span>)
+      icon: (<FontIcon className='material-icons' style={iconStyle}>people</FontIcon>),
+      likes: (
+        <div style={textBox}>
+          Unique users <br />
+        <span style={{fontSize: '70px'}}>{this._numberToFormattedString(this.props.likes)}</span>
+        </div>
+      )
     }
 }
 

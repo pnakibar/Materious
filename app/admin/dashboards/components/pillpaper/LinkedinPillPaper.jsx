@@ -27,13 +27,13 @@ export default class LinkedinPillPaper extends React.Component {
       return this._numberToFormattedString(Math.floor(number / 1000)) + 'k'
     }
   }
+
   _generateLikeProperties () {
-    const fontStyle = {
+    const textBox = {
       color: '#FFFFFF',
-      display: 'inline-block',
       verticalAlign: 'middle',
       lineHeight: 'normal',
-      fontSize: '70px'
+      padding: '10px'
     }
     const iconStyle = {
         color: '#FFFFFF',
@@ -45,7 +45,12 @@ export default class LinkedinPillPaper extends React.Component {
 
     return {
       icon: (<FontIcon className='fa fa-linkedin-square' style={iconStyle} />),
-      likes: (<span style={fontStyle}>{this.props.likes}</span>)
+      likes: (
+        <div style={textBox}>
+          Linkedin followers <br />
+        <span style={{fontSize: '70px'}}>{this._numberToFormattedString(this.props.likes)}</span>
+        </div>
+      )
     }
 }
 

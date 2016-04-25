@@ -28,12 +28,11 @@ export default class GooglePlusPillPaper extends React.Component {
     }
   }
   _generateLikeProperties () {
-    const fontStyle = {
+    const textBox = {
       color: '#FFFFFF',
-      display: 'inline-block',
       verticalAlign: 'middle',
       lineHeight: 'normal',
-      fontSize: '70px'
+      padding: '10px'
     }
     const iconStyle = {
         color: '#FFFFFF',
@@ -45,7 +44,12 @@ export default class GooglePlusPillPaper extends React.Component {
 
     return {
       icon: (<FontIcon className='fa fa-google-plus' style={iconStyle} />),
-      likes: (<span style={fontStyle}>{this.props.likes}</span>)
+      likes: (
+        <div style={textBox}>
+          Google Plus followers<br />
+        <span style={{fontSize: '70px'}}>{this._numberToFormattedString(this.props.likes)}</span>
+        </div>
+      )
     }
 }
 

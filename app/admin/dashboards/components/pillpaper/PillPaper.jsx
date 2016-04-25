@@ -7,7 +7,7 @@ export default class PillPaper extends React.Component {
 
     const paperStyle = {
       height: '120px',
-      width: '360px'
+      width: '320px'
     }
 
     const styleLeft = this._applyCentralized(
@@ -25,7 +25,7 @@ export default class PillPaper extends React.Component {
       {
         backgroundColor: this.props.colorRight,
         height: '120px',
-        width: '240px',
+        width: '200px',
         display: 'block',
         float: 'right'
       }
