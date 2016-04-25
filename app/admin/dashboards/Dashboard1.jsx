@@ -6,6 +6,8 @@ import FontIcon from 'material-ui/FontIcon'
 import Paper from 'material-ui/Paper'
 import {indigo500, indigo900} from 'material-ui/styles/colors'
 import FacebookPillPaper from './components/pillpaper/FacebookPillPaper'
+import GooglePlusPillPaper from './components/pillpaper/GooglePlusPillPaper'
+import LinkedinPillPaper from './components/pillpaper/LinkedinPillPaper'
 
 export default class Dashboard1 extends React.Component {
   constructor (props) {
@@ -14,35 +16,15 @@ export default class Dashboard1 extends React.Component {
 
   render () {
     const style = {
-      height: '100px',
-      width: '100px',
-      margin: '20px',
-      textAlign: 'center',
-      display: 'inline-block',
-    };
-
-    const redStyle = {
-      height: '100px',
-      width: '100px',
-      margin: '20px',
-      textAlign: 'center',
-      display: 'inline-block',
-      backgroundColor: 'red'
-    };
-
-    const redBox = {
-      width: '100px',
-      height: '100px',
-      backgroundColor: 'red'
+      margin: '10px'
     }
-
     return (
       <Dashboard title={this.props.title}>
-        <FacebookPillPaper
-          likes={10}/>
-        <Paper style={style} zDepth={5} rounded={false}>
-          <div style={redBox} />
-        </Paper>
+        <Row>
+          <Col style={style}><FacebookPillPaper likes={10} /></Col>
+          <Col style={style}><GooglePlusPillPaper likes={10} /></Col>
+          <Col style={style}><LinkedinPillPaper likes={10} /></Col>
+        </Row>
       </Dashboard>
     )
   }

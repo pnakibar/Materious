@@ -1,20 +1,20 @@
 import React from 'react'
 import PillPaper from './PillPaper'
-import {indigo500, indigo900} from 'material-ui/styles/colors'
+import {blue500, blue700} from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon'
 
-export default class FacebookPillPaper extends React.Component {
+export default class LinkedinPillPaper extends React.Component {
   render () {
     const likeIcon = this._generateLikeProperties()
     return (
-      <div className='pillpaper-facebook'>
+      <div className='pillpaper-linkedin'>
         <PillPaper
-          colorLeft={indigo500}
-          colorRight={indigo900}
+          colorLeft={blue500}
+          colorRight={blue700}
           contentLeft={likeIcon.icon}
           contentRight={likeIcon.likes}
           centralizeLeft={true}
-          />
+        />
       </div>
     )
 
@@ -44,7 +44,7 @@ export default class FacebookPillPaper extends React.Component {
     }
 
     return {
-      icon: (<FontIcon className='fa fa-thumbs-o-up' style={iconStyle} />),
+      icon: (<FontIcon className='fa fa-linkedin-square' style={iconStyle} />),
       likes: (<span style={fontStyle}>{this.props.likes}</span>)
     }
 }
