@@ -6,38 +6,40 @@ export default class PillPaper extends React.Component {
   render () {
 
     const paperStyle = {
-      height: '120px',
-      width: '310px'
+      display: 'flex',
+      minHeight: '90px',
+      minWidth: '210px',
+      width: '100%',
+      background: this.props.contentBg
     }
 
-    const styleLeft = this._applyCentralized(
-      this.props.centralizeLeft || false,
-      {
-        backgroundColor: this.props.colorLeft,
-        height: paperStyle.height,
-        width: '120px',
-        display: 'block',
-        float: 'left'
-      }
-    )
-    const styleRight = this._applyCentralized(
-      this.props.centralizeRight || false,
-      {
-        backgroundColor: this.props.colorRight,
-        height: paperStyle.height,
-        width: parseInt(paperStyle.width) - 120 + 'px',
-        display: 'block',
-        float: 'right'
-      }
-    )
+    const contentStyle = {
+      display: 'block',
+      float: 'right',
+      padding: '10px'
+    }
 
+    const iconStyle = {
+      display: 'block',
+      float: 'left',
+      height: '90px',
+      width: '90px',
+      textAlign: 'center',
+      fontSize: '45px',
+      lineHeight: '90px',
+      backgroundColor: this.props.iconBg
+    }
     return (
-      <div className='paper-pill' style={{display:'block', position:'relative', display: 'flex'}}>
-        <Paper rounded={false} style={paperStyle} zDepth={3}>
-          <div style={styleLeft}>{this.props.contentLeft}</div>
-          <div style={styleRight}>{this.props.contentRight}</div>
+        <Paper rounded={false} style={paperStyle} zDepth={2}>
+          <span className='pillpaper-icon' style={iconStyle}>
+            {this.props.icon}
+          </span>
+          <div
+            className='pillpaper-content'
+            style={contentStyle}>
+            {this.props.content}
+          </div>
         </Paper>
-      </div>
     )
   }
   _applyCentralized (doOrNot, css) {

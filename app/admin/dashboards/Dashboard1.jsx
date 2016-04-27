@@ -10,6 +10,8 @@ import GooglePlusPillPaper from './components/pillpaper/GooglePlusPillPaper'
 import LinkedinPillPaper from './components/pillpaper/LinkedinPillPaper'
 import UsersPillPaper from './components/pillpaper/UsersPillPaper'
 
+import Chart from './components/Chart'
+
 export default class Dashboard1 extends React.Component {
   constructor (props) {
     super(props)
@@ -24,14 +26,25 @@ export default class Dashboard1 extends React.Component {
       marginTop: '10px',
       marginBottom: '10px'
     }
+    const paperStyle = {
+      height: '500px',
+      width: '676px',
+      marginTop: '10px',
+      marginBottom: '10px'
+    }
     return (
       <Dashboard title={this.props.title}>
         <div className='dashboard-content' style={style}>
-          <Row around='xs'>
+          <Row>
             <Col xs style={elementStyle} ><FacebookPillPaper likes={1000} /></Col>
             <Col xs style={elementStyle} ><GooglePlusPillPaper likes={99999} /></Col>
             <Col xs style={elementStyle} ><LinkedinPillPaper likes={1200000} /></Col>
             <Col xs style={elementStyle} ><UsersPillPaper likes={100000} /></Col>
+          </Row>
+          <Row>
+            <Col xs={4}>
+              <Chart />
+            </Col>
           </Row>
         </div>
       </Dashboard>

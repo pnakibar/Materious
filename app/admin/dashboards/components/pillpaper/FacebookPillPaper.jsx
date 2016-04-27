@@ -9,10 +9,10 @@ export default class FacebookPillPaper extends React.Component {
     return (
       <div className='pillpaper-facebook'>
         <PillPaper
-          colorLeft={indigo500}
-          colorRight={indigo900}
-          contentLeft={likeIcon.icon}
-          contentRight={likeIcon.likes}
+          iconBg={indigo500}
+          contentBg={indigo900}
+          icon={likeIcon.icon}
+          content={likeIcon.likes}
           centralizeLeft={true}
           />
       </div>
@@ -29,25 +29,15 @@ export default class FacebookPillPaper extends React.Component {
   }
   _generateLikeProperties () {
     const textBox = {
-      color: '#FFFFFF',
-      verticalAlign: 'middle',
-      lineHeight: 'normal',
-      padding: '10px'
-    }
-    const iconStyle = {
-        color: '#FFFFFF',
-        fontSize: '80px',
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        lineHeight: 'normal'
+      color: '#FFFFFF'
     }
 
     return {
-      icon: (<FontIcon className='fa fa-thumbs-o-up' style={iconStyle} />),
+      icon: (<FontIcon color={'#FFFFFF'} style={{fontSize: '50px'}} className='fa fa-thumbs-o-up'/>),
       likes: (
         <div style={textBox}>
           Facebook likes <br />
-          <span style={{fontSize: '70px'}}>{this._numberToFormattedString(this.props.likes)}</span>
+        <span style={{fontSize: '30px'}}>{this._numberToFormattedString(this.props.likes)}</span>
         </div>
       )
     }
