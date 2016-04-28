@@ -5,54 +5,26 @@ import FontIcon from 'material-ui/FontIcon'
 
 export default class UsersPillPaper extends React.Component {
   render () {
-    const likeIcon = this._generateLikeProperties()
+    const style = {
+      fontSize: '100%'
+    }
+    const tdStyle = {
+      textAlign: 'center'
+    }
+    const icon = (<FontIcon
+      color={'#FFFFFF'}
+      className='material-icons'
+      style={style}>people</FontIcon>)
     return (
       <div className='pillpaper-users'>
-        <PillPaper
-          colorLeft={green500}
-          colorRight={green700}
-          contentLeft={likeIcon.icon}
-          contentRight={likeIcon.likes}
-          centralizeLeft={true}
+        <PillPaper.Number
+          iconBg={green500.toString()}
+          contentBg={green700.toString()}
+          title={'Total Users'}
+          number={10}
+          overrideIcon={icon}
         />
       </div>
     )
-
   }
-
-  _numberToFormattedString (number) {
-    if (number < 1000) {
-      return number
-    } else {
-      return this._numberToFormattedString(Math.floor(number / 1000)) + 'k'
-    }
-  }
-
-  _generateLikeProperties () {
-    const textBox = {
-      color: '#FFFFFF',
-      verticalAlign: 'middle',
-      lineHeight: 'normal',
-      padding: '10px'
-    }
-    const iconStyle = {
-        color: '#FFFFFF',
-        fontSize: '80px',
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        lineHeight: 'normal'
-    }
-
-    return {
-      icon: (<FontIcon className='material-icons' style={iconStyle}>people</FontIcon>),
-      likes: (
-        <div style={textBox}>
-          Unique users <br />
-        <span style={{fontSize: '70px'}}>{this._numberToFormattedString(this.props.likes)}</span>
-        </div>
-      )
-    }
-}
-
-
 }
