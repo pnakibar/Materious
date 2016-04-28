@@ -7,7 +7,7 @@ export default class GooglePlusPillPaper extends React.Component {
   render () {
     return (
       <div className='pillpaper-google-plus'>
-        <PillPaper.Number
+        <PillPaper
           iconBg={red500}
           contentBg={red900}
           iconClass='fa fa-google-plus-square'
@@ -16,6 +16,5 @@ export default class GooglePlusPillPaper extends React.Component {
           />
       </div>
     )
-
   }
 }

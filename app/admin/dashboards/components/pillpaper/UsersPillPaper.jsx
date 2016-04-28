@@ -17,12 +17,12 @@ export default class UsersPillPaper extends React.Component {
       style={style}>people</FontIcon>)
     return (
       <div className='pillpaper-users'>
-        <PillPaper.Number
+        <PillPaper
           iconBg={green500.toString()}
           contentBg={green700.toString()}
           title={'Total Users'}
           number={10}
-          overrideIcon={icon}
+          iconClassName={'fa fa-users'}
         />
       </div>
     )

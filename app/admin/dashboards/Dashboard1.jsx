@@ -19,15 +19,13 @@ export default class Dashboard1 extends React.Component {
       minHeight: '90px',
       background: '#fff',
       width: '100%',
-      boxShadow: '0 1px 1px rgba(0,0,0,0.1)',
-      borderRadius: '2px',
       marginBottom: '15px'
     }
     const styleIcon = {
-      borderTopLeftRadius: '2px',
+      borderTopLeftRadius: this.props.rouded? '2px' : 0,
       borderTopRightRadius: 0,
       borderBottomRightRadius: 0,
-      borderBottomLeftRadius: '2px',
+      borderBottomLeftRadius: this.props.rouded? '2px' : 0,
       display: 'block',
       float: 'left',
       height: '90px',
@@ -56,13 +54,13 @@ export default class Dashboard1 extends React.Component {
       fontSize: '18px'
     }
     return (
-      <div style={styleInfobox}>
+      <Paper style={styleInfobox} zDepth={3}>
         <div style={styleIcon}><i className="fa fa-users"></i></div>
         <div style={styleContent}>
           <span style={styleText}>Likes</span>
           <span style={styleNumber}>41,410</span>
         </div>
-      </div>
+      </Paper>
     )
 
   }
@@ -89,11 +87,11 @@ export default class Dashboard1 extends React.Component {
       <Dashboard title={this.props.title}>
         <div className='dashboard-content' style={style}>
           <Row>
-            <Col xs={4}>{this._text()}</Col>
-            <Col xs={4}>{this._text()}</Col>
-            <Col xs={4}>{this._text()}</Col>
-            <Col xs={4}>{this._text()}</Col>
-            <Col xs={4}>{this._text()}</Col>
+            <Col xs={3}>{this._text()}</Col>
+            <Col xs={3}>{this._text()}</Col>
+            <Col xs={3}>{this._text()}</Col>
+            <Col xs={3}>{this._text()}</Col>
+            <Col xs={3}>{this._text()}</Col>
             </Row>
           <Row>
             <Col xs style={elementStyle} ><FacebookPillPaper likes={1000} /></Col>
