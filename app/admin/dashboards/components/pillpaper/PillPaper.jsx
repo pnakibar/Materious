@@ -49,7 +49,8 @@ export default class PillPaper extends React.Component {
       if (this.props.overrideIcon)
         return this.props.overrideIcon
       else
-        return (<i className={this.props.iconClassName}></i>)
+        // return (<i className={this.props.iconClassName}></i>)
+        return (<i className="material-icons" style={{fontSize: '45px'}}>people</i>)
     }
     return (
       <Paper style={styleInfobox} rounded={this.props.rounded} zDepth={3}>
