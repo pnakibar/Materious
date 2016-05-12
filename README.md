@@ -32,7 +32,7 @@ The generated code is spitted into the _./build_ directory.
 - [ ] Login/Signup component
 - [ ] User management screen (add users, delete, change password)
 - [ ] __React-Router__
-- [ ] Finish the dashboards container components
+- [ ] Dashboards container components
 - [ ] Get the left-navbar right
 - [ ] Make chart components using _d3_ and/or _c3_
 - [ ] Finish some Dashboards samples
